@@ -1,6 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchData } from '../../actions';
+import Carousel from 'react-bootstrap/Carousel'
+
+
+import HomeList from './insideHome/HomeList';
 
 class PageHome extends React.Component {
 
@@ -15,17 +19,18 @@ class PageHome extends React.Component {
         const renderList = () => {
             return this.props.moviePopular.map( movie => {
                 return (
-                    <div key={movie.id}>
-                        {movie.title}
-                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.original_title} />
-                    </div>
+                        <div key={movie.id}>
+                            <HomeList movie={movie}/>
+                        </div>
                 )
             });
         }
 
         return (
             <div>
-                {renderList()}
+                <Carousel>
+                    {renderList()}
+                </Carousel>
             </div>
         )   
     }

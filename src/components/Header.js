@@ -7,7 +7,7 @@ import { LinkContainer } from "react-router-bootstrap";
 const Header = () => {
     return (
         <div>
-            <Navbar bg="success" variant="dark" expand="lg">
+            <Navbar bg="danger" variant="dark" expand="lg">
                 
                 <LinkContainer to="/">
                     <Navbar bg="" variant="dark">
@@ -26,7 +26,7 @@ const Header = () => {
                         <LinkContainer to="/search">
                             <Nav.Link>Result</Nav.Link>
                         </LinkContainer>
-                        
+  
                     </Nav>
 
                 </Navbar.Collapse>
