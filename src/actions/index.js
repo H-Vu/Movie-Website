@@ -18,10 +18,10 @@ export const fetchData = () => async (dispatch) => {
 };
 
 export const fetchSearch = (formValue) => async (dispatch) => {
-    const response = await axios.get( '/search', {
+    const response = await axios.get( '/search/movie', {
         params: {
             api_key: KEY,
-            query: formValue,
+            query: formValue.searchBar,
         }
     });
 

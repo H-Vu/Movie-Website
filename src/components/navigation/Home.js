@@ -14,7 +14,7 @@ class PageHome extends React.Component {
 
     render() {
 
-        console.log(this.props.moviePopular)
+        //console.log(this.props.moviePopular)
 
         const renderList = () => {
             return this.props.moviePopular.map( movie => {
