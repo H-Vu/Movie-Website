@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { LinkContainer } from "react-router-bootstrap";
-//import SearchBar from './SearchBar';
+import SearchBar from './SearchBar';
 
 const Header = () => {
     return (
@@ -26,8 +26,9 @@ const Header = () => {
                         <LinkContainer to="/search">
                             <Nav.Link>Result</Nav.Link>
                         </LinkContainer>
-  
                     </Nav>
+                    
+                    <SearchBar />
 
                 </Navbar.Collapse>
             </Navbar>
