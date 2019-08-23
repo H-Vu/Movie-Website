@@ -10,10 +10,14 @@ import { fetchSearch } from '../actions';
 
 class SearchBar extends React.Component {
 
+    state = {
+        redirect: false,
+    }
+
     onSubmit = (formValue) => {
         console.log(this.props)
         this.props.fetchSearch(formValue)
-        
+        this.setState({redirect: true})
     }
 
     renderInput = (formProps) => {
@@ -26,14 +30,20 @@ class SearchBar extends React.Component {
 
     render() {
        // console.log(this.props)
-        return (
-            <div>
-                <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
-                    <Field name="searchBar" component={this.renderInput} />
-                    <button>Search</button>
-                </form>
-            </div>
-        );
+        if (!this.state.redirect) {
+            return (
+                <div>
+                    <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+                        <Field name="searchBar" component={this.renderInput} />
+                        <button>Search</button>
+                    </form>
+                </div>
+            );
+        } else {
+            return (
+                <Redirect to="/search" />
+            )
+        }
     };
 }
 
