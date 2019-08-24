@@ -2,9 +2,10 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import { LinkContainer } from "react-router-bootstrap";
+
+import Button from 'react-bootstrap/Button';
+import FormControl from 'react-bootstrap/FormControl';
+import Form from 'react-bootstrap/Form';
 
 import { fetchSearch } from '../actions';
 
@@ -15,33 +16,43 @@ class SearchBar extends React.Component {
     }
 
     onSubmit = (formValue) => {
-        console.log(this.props)
         this.props.fetchSearch(formValue)
         this.setState({redirect: true})
+        
     }
 
     renderInput = (formProps) => {
         return (
             <div>
-                <input {...formProps.input} />
+                <FormControl type="text" placeholder="I know everything" className="mr-sm-2" {...formProps.input} />
             </div>
         )
     }
 
-    render() {
-       // console.log(this.props)
+    render() { 
+        //console.log(this.props)
         if (!this.state.redirect) {
             return (
                 <div>
-                    <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+                    <Form inline onSubmit={this.props.handleSubmit(this.onSubmit)}>
                         <Field name="searchBar" component={this.renderInput} />
-                        <button>Search</button>
-                    </form>
+                        <Button variant="dark" type="submit">Search</Button>
+                    </Form>
                 </div>
             );
         } else {
             return (
-                <Redirect to="/search" />
+                <div>
+                    <div>
+                        <Form inline onSubmit={this.props.handleSubmit(this.onSubmit)}>
+                            <Field name="searchBar" component={this.renderInput} />
+                            <Button variant="dark" type="submit">Search</Button>
+                        </Form>
+                    </div>
+                    <Redirect to="/search" />
+                    {this.setState({redirect: false})}
+                </div>
+                
             )
         }
     };

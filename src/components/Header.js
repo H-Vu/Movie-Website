@@ -28,10 +28,8 @@ const Header = () => {
                         </LinkContainer>
                     </Nav>
 
-                    
-                            <SearchBar />
+                    <SearchBar />
                         
-
                 </Navbar.Collapse>
             </Navbar>
         </div>
