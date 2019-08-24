@@ -10,18 +10,23 @@ const searchList = (props) => {
             <tbody>
                 <tr>
                     <td>
-                        <img className="" height={500} src={`https://image.tmdb.org/t/p/w500${props.movie.poster_path}`} alt={props.movie.original_title} />
+                        <div className="col-sm-12 col-md-5">
+                            <img className="" width={320} height={500} src={`https://image.tmdb.org/t/p/w500${props.movie.poster_path}`} alt={props.movie.original_title} />
+                        </div>
                     </td>
                     <td>
                         
-                            <Container>
+                        <Container>
+                            <div className="col-sm-12 col-lg-12">
                                 <div className="title">
                                     {props.movie.original_title}
                                 </div>
                                 <p className="content">{props.movie.overview}</p>
-                            </Container>
+                            </div>
+                        </Container>
                         
                     </td>
+                    
                 </tr>
             </tbody>
         </div>
