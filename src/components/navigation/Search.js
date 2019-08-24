@@ -9,7 +9,9 @@ class PageSearch extends React.Component {
         return this.props.movieSearch.map( movie => {
             return (
                 <div key={movie.id}>
-                    <SearchList movie={movie}/>
+                    <table>
+                        <SearchList movie={movie}/>
+                    </table>
                 </div>
             )
         });
