@@ -1,0 +1,1 @@
+{"version":3,"sources":["SearchList.css"],"names":[],"mappings":"AAAA,OACI,cAAe,CACf,aACJ,CAEA,SACI,cACJ","file":"main.dfb149df.chunk.css","sourcesContent":[".title {\n    font-size: 250%;\n    color: #FFFF80;\n}\n\n.content {\n    font-size: 110%;\n}"]}
